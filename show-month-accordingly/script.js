@@ -1,8 +1,8 @@
-// Show Current month, previous two month and next three months dynamically using Date methods ex: May, June, July, August, September, October.
+const today = new Date();
+let indexOfCurrentMonth = today.getMonth();
+let months = [];
 
-const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-const currentMonthIndex = new Date().getMonth();
-const monthsToShow = month.slice(currentMonthIndex -2, currentMonthIndex + 4);
-console.log(monthsToShow);
-document.getElementById("months").innerHTML = monthsToShow;
-
+for (let i = indexOfCurrentMonth -2; i <= indexOfCurrentMonth + 3; i++) {
+    today.setMonth(i);
+    console.log(today.toLocaleString('default', {month : "long"}));
+}
